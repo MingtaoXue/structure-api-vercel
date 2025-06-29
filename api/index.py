@@ -2,20 +2,23 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify({"message": "Structure API root. Use POST /predict"})
+
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()
-    user_input = data.get("text", "")
 
-    if "薛明涛" in user_input:
-        response = "✅ 已触发主干节拍链（薛明涛结构系统）"
-    elif "珠子" in user_input or "节拍" in user_input:
-        response = "⚙️ 已识别珠子节拍关键词，构建局部结构响应"
+    if not data or "text" not in data:
+        return jsonify({"error": "Missing 'text' in request"}), 400
+
+    input_text = data["text"]
+
+    # 这里是薛明涛模型的逻辑响应
+    if "薛明涛" in input_text and "结构" in input_text:
+        response = "✅ 已触发薛明涛结构识别系统。"
     else:
-        response = "⚠️ 未识别关键词，无法建立结构链"
+        response = "⚠️ 无法识别为薛明涛模型的请求。"
 
     return jsonify({"response": response})
-
-@app.route("/", methods=["GET"])
-def root():
-    return jsonify({"message": "结构预测 API 已部署成功，等待关键词调用。"})
