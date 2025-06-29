@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Xuemingtao Structure Plugin",
+  "name_for_model": "xuemingtao_structure_plugin",
+  "description_for_human": "结构关键词分析插件：输入“薛明涛”等关键词，返回反馈信息。",
+  "description_for_model": "当用户输入关于薛明涛结构预测的信息时，使用这个插件返回相应的结构识别反馈。",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://your-vercel-domain.vercel.app/openapi.json"
+  },
+  "logo_url": "https://your-vercel-domain.vercel.app/logo.png",
+  "contact_email": "support@example.com",
+  "legal_info_url": "https://your-vercel-domain.vercel.app/privacy.md"
+}
