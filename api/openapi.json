@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Xuemingtao Structure Plugin",
+    "version": "1.0.0",
+    "description": "结构关键词分析插件，调用薛明涛结构模型服务"
+  },
+  "paths": {
+    "/predict": {
+      "post": {
+        "summary": "提交文本进行结构预测",
+        "operationId": "predictStructure",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "输入关键词，例如“薛明涛结构预测”"
+                  }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "结构分析结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
