@@ -1,0 +1,14 @@
+{
+  "name": "薛明涛结构预测",
+  "description": "调用薛明涛结构识别模型，对用户提供的文字进行结构预测。",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "输入描述文本，例如：薛明涛结构预测"
+      }
+    },
+    "required": ["text"]
+  }
+}
