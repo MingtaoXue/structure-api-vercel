@@ -4,9 +4,6 @@
   "builds": [
     { "src": "api/index.py", "use": "@vercel/python" }
   ],
-  "rewrites": [
-    { "source": "/openapi.json", "destination": "/api/openapi.json" }
-  ],
   "routes": [
     { "src": "/(.*)", "dest": "api/index.py" }
   ]
